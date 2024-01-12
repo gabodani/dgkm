@@ -10,6 +10,14 @@ bot.onText(/შენი საყვარელი საჭმელი/,(msg
   const food=msg.chat.id;
   bot.sendMessage(food,`რათქმაუნდა ქართული მამა-პაპური ხინკალი`);
 })
+const pasuxi=['გისმენ მეგობარო','ხომ არ მეძახდით','გისმენთ','აქ ვარ'];
+const ansveri=(max,min)=>{
+  return Math.round(min-0.8+Math.random()*(max-min+1));
+};
+bot.onText(/ზვიადა/,(msg)=>{
+  const zviadi=msg.chat.id;
+  bot.sendMessage(zviadi,`${pasuxi[ansveri(3,0)]}`);
+})
   //CHANNELS
   bot.onText(/ჩართე იმედი/,(msg)=>{
     const imedi=msg.chat.id;
@@ -262,23 +270,46 @@ bot.onText(/შენი საყვარელი საჭმელი/,(msg
     const ger=msg.chat.id;
     bot.sendMessage(ger,`ბერლინი`);
   })
-  //information
-  bot.onText(/ინფორმაცია ნაპოლეონ ბონაპარტზე/,(/მოძებნე ინფორმაცია ნაპოლეონ ბონაპარტზე/,(msg)=>{
-    const napoleon=msg.chat.id;
-    bot.sendMessage(napoleon,`https://ka.wikipedia.org/wiki/%E1%83%9C%E1%83%90%E1%83%9E%E1%83%9D%E1%83%9A%E1%83%94%E1%83%9D%E1%83%9C_%E1%83%91%E1%83%9D%E1%83%9C%E1%83%90%E1%83%9E%E1%83%90%E1%83%A0%E1%83%A2%E1%83%98`);
-  }))
-  bot.onText(/ნაპოლეონ ბონაპარტი/,(msg)=>{
-    const nap=msg.chat.id;
-    bot.sendMessage(nap,`https://ka.wikipedia.org/wiki/%E1%83%9C%E1%83%90%E1%83%9E%E1%83%9D%E1%83%9A%E1%83%94%E1%83%9D%E1%83%9C_%E1%83%91%E1%83%9D%E1%83%9C%E1%83%90%E1%83%9E%E1%83%90%E1%83%A0%E1%83%A2%E1%83%98`);
+  bot.onText(/პოლონეთის დედაქალაქი/,(msg)=>{
+    const pol=msg.chat.id;
+    bot.sendMessage(pol,`ვარშავა`);
   })
-  bot.onText(/მიქელანჯელო/,(msg)=>{
-    const mik=msg.chat.id;
-    bot.sendMessage(mik,`https://ka.wikipedia.org/wiki/%E1%83%9B%E1%83%98%E1%83%A5%E1%83%94%E1%83%9A%E1%83%90%E1%83%9C%E1%83%AF%E1%83%94%E1%83%9A%E1%83%9D_%E1%83%91%E1%83%A3%E1%83%9D%E1%83%9C%E1%83%90%E1%83%A0%E1%83%9D%E1%83%A2%E1%83%98`);
+  bot.onText(/უკრაინის დედაქალაქი/,(msg)=>{
+    const ua=msg.chat.id;
+    bot.sendMessage(ua,`კიევი`);
   })
-  bot.onText(/ინფორმაცია მიქელანჯელოს შესახებ /,(msg)=>{
-    const mikk=msg.chat.id;
-    bot.sendMessage(mikk,`https://ka.wikipedia.org/wiki/%E1%83%9B%E1%83%98%E1%83%A5%E1%83%94%E1%83%9A%E1%83%90%E1%83%9C%E1%83%AF%E1%83%94%E1%83%9A%E1%83%9D_%E1%83%91%E1%83%A3%E1%83%9D%E1%83%9C%E1%83%90%E1%83%A0%E1%83%9D%E1%83%A2%E1%83%98`);
+  bot.onText(/საუდის არაბეთის დედაქალაქი/,(msg)=>{
+    const saud=msg.chat.id;
+    bot.sendMessage(saud,`ერ-რიადი`);
   })
+  bot.onText(/არგენტინის დედაქალაქი/,(msg)=>{
+    const argen=msg.chat.id;
+    bot.sendMessage(argen,`ბუენოს-აირესი`);
+  })
+bot.onText(/კუბის დედაქალაქი/,(msg)=>{
+  const cub=msg.chat.id;
+  bot.sendMessage(cub,`ჰავანა`);
+})
+bot.onText(/იაპონიის დედაქალაქი/,(msg)=>{
+  const japa=msg.chat.id;
+  bot.sendMessage(japa,`ტოკიო`);
+})
+bot.onText(/ახალი ზელანდიის დედაქალაქი/,(msg)=>{
+  const newze=msg.chat.id;
+  bot.sendMessage(newze,`უელინგტონი`);
+})
+bot.onText(/დანიის დედაქალაქი/,(msg)=>{
+  const denm=msg.chat.id;
+  bot.sendMessage(denm,`კოპენჰაგენი`);    
+})
+bot.onText(/სირიის დედაქალაქი/,(msg)=>{
+  const sir=msg.chat.id;
+  bot.sendMessage(sir,`დამასკო`);
+})
+bot.onText(/კანადის დედაქალაქი/,(msg)=>{
+  const canad=msg.chat.id;
+  bot.sendMessage(canad,`ოტავა`);
+})
   //recipes
   bot.onText(/ხინკლის რეცეპტი/,(msg)=>{
     const xink=msg.chat.id;
@@ -295,5 +326,13 @@ bot.onText(/შენი საყვარელი საჭმელი/,(msg
   bot.onText(/პიცის მომზადების წესი/,(msg)=>{
     const piza=msg.chat.id;
     bot.sendMessage(piza,`https://kulinaria.ge/receptebi/pica-saxlis-pirobebSi_209/`);
+  })
+  bot.onText(/იმერული ხაჭაპურის მომზადების წესი/,(msg)=>{
+    const imer=msg.chat.id;
+    bot.sendMessage(imer,`https://kulinaria.ge/receptebi/imeruli-xaWapuri_639/`);
+  })
+  bot.onText(/იმერული ხაჭაპურის რეცეპტი/,(msg)=>{
+    const imeri=msg.chat.id;
+    bot.sendMessage(imeri,`https://kulinaria.ge/receptebi/imeruli-xaWapuri_639/`);
   })
 
